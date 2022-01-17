@@ -35,7 +35,7 @@ namespace SdmBoletos
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Documentação Whatsapp",
+                    Title = "Documentação boleto",
                     Version = "1.0"
                 });
             });
