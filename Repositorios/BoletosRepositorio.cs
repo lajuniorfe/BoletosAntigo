@@ -23,7 +23,7 @@ namespace SdmBoletos.Repositorios
 
             ListagemBoletosModel listagemBoletos = new ListagemBoletosModel();
 
-            var url = $"https://api.bb.com.br/cobrancas/v1/boletos";
+            var url = $"https://api.bb.com.br";
 
             var client = new RestClient(url);
 
@@ -32,7 +32,7 @@ namespace SdmBoletos.Repositorios
             request.AddParameter("indicadorSituacao", $"{Indicador}");
             request.AddParameter("agenciaBeneficiario", listagemBoletos.AgenciaBeneficiario);
             request.AddParameter("contaBeneficiario", listagemBoletos.ContaBeneficiario);
-            request.AddParameter("gw-dev-app-key", "7091c08b0fffbe70136ce18190050656b9b1a5be");
+            request.AddParameter("gw-dev-app-key", "e70136ce18190050656b9b1a5be");
             request.AddHeader("Authorization", $"Bearer {Token}");
 
 
@@ -75,10 +75,10 @@ namespace SdmBoletos.Repositorios
             ListagemBoletosModel listagemBoletos = new ListagemBoletosModel();
 
 
-            listagemBoletos.AgenciaBeneficiario = "452";
-            listagemBoletos.ContaBeneficiario = "123873";
+            listagemBoletos.AgenciaBeneficiario = "456872";
+            listagemBoletos.ContaBeneficiario = "1238799883";
 
-            var url = $"https://api.hm.bb.com.br/cobrancas/v1/boletos";
+            var url = $"https://api.hm.bb.com.br/";
 
             var client = new RestClient(url);
 
@@ -119,14 +119,14 @@ namespace SdmBoletos.Repositorios
         public string CriarBoletosTeste(string Token, object json)
         {
 
-            var url = "https://api.hm.bb.com.br/cobrancas/v1/boletos?gw-dev-app-key=d27bd7790fffab601361e17de0050656b981a5b1";
+            var url = "https://api.hm.bb.com.br/cobrancas/v1/boletos?gw-dev-app-key=8787877";
             var client = new RestClient(url);
             client.Timeout = -1;
 
             var objetoConvertido = JsonConvert.SerializeObject(json.ToString());
 
             var request = new RestRequest(Method.POST);
-            //  request.AddParameter("gw-dev-app-key", "d27bd7790fffab601361e17de0050656b981a5b1");
+            //  request.AddParameter("gw-dev-app-key", "454545454");
             request.AddParameter("application/json", objetoConvertido, ParameterType.RequestBody);
             request.AddHeader("Authorization", $"Bearer {Token}");
             request.AddHeader("Contente-Type", "application/json");
@@ -150,7 +150,7 @@ namespace SdmBoletos.Repositorios
 
             List<string> Retorno = new List<string>();
             
-            var url = "https://api.bb.com.br/cobrancas/v1/boletos?gw-dev-app-key=7091c08b0fffbe70136ce18190050656b9b1a5be";
+            var url = "https://api.bb.com.br/cobrancas/v1/boletos?gw-dev-app-key=666666";
             var client = new RestClient(url);
             client.Timeout = -1;
 
@@ -185,7 +185,7 @@ namespace SdmBoletos.Repositorios
         public string AlterarBoletosTeste(string Token, string Id,  object Parametros)
         {
             
-            var url = $"https://api.hm.bb.com.br/cobrancas/v1/boletos/{Id}?gw-dev-app-key=d27bd7790fffab601361e17de0050656b981a5b1";
+            var url = $"https://api.hm.bb.com.br/cobrancas/v1/boletos/{Id}?gw-dev-app-key=44444";
             
             var client = new RestClient(url);
             client.Timeout = -1;
@@ -214,7 +214,7 @@ namespace SdmBoletos.Repositorios
 
         public string AlterarBoletos(string Token, string Id, object Parametros)
         {
-            var url = $"https://api.bb.com.br/cobrancas/v1/boletos/{Id}?gw-dev-app-key=7091c08b0fffbe70136ce18190050656b9b1a5be";
+            var url = $"https://api.bb.com.br/cobrancas/v1/boletos/{Id}?gw-dev-app-key=222222";
 
             var client = new RestClient(url);
             client.Timeout = -1;
@@ -242,7 +242,7 @@ namespace SdmBoletos.Repositorios
 
         public string BaixarBoletos(string Token, string Id, object Parametros)
         {
-            var url = $"https://api.bb.com.br/cobrancas/v1/boletos/{Id}/baixar?gw-dev-app-key=7091c08b0fffbe70136ce18190050656b9b1a5be";
+            var url = $"https://api.bb.com.br/cobrancas/v1/boletos/{Id}/baixar?gw-dev-app-key=11111";
             
             var client = new RestClient(url);
             client.Timeout = -1;
@@ -276,7 +276,7 @@ namespace SdmBoletos.Repositorios
 
             var request = new RestRequest(Method.GET);
 
-            request.AddParameter("gw-dev-app-key", "7091c08b0fffbe70136ce18190050656b9b1a5be");
+            request.AddParameter("gw-dev-app-key", "99999");
             request.AddParameter("numeroConvenio", 3081662);
             request.AddHeader("Authorization", $"Bearer {Token}");
             request.AddHeader("Content-Type", "application/json");
@@ -297,8 +297,8 @@ namespace SdmBoletos.Repositorios
 
             ListagemBoletosModel listagemBoletos = new ListagemBoletosModel();
 
-            listagemBoletos.AgenciaBeneficiario = "452";
-            listagemBoletos.ContaBeneficiario = "123873";
+            listagemBoletos.AgenciaBeneficiario = "455578952";
+            listagemBoletos.ContaBeneficiario = "123879977413";
 
             var url = $"https://api.hm.bb.com.br/cobrancas/v1/boletos/{Id}";
 
@@ -307,7 +307,7 @@ namespace SdmBoletos.Repositorios
             var request = new RestRequest(Method.GET);
 
             request.AddParameter("indicadorSituacao", $"{Id}");
-            request.AddParameter("gw-dev-app-key", "7091c08b0fffbe70136ce18190050656b9b1a5be");
+            request.AddParameter("gw-dev-app-key", "3693963");
             request.AddHeader("Authorization", $"Bearer {Token}");
 
             IRestResponse response = client.Execute(request);
